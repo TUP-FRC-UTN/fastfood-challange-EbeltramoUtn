@@ -1,0 +1,7 @@
+<h3>Pedidos listos para entregar</h3>
+<ul>
+  <li *ngFor="let pedido of pedidosTerminados">
+    {{ pedido.numero }} - {{ pedido.nombre }}
+    <button (click)="entregar(pedido)">Entregar!</button>
+  </li>
+</ul>

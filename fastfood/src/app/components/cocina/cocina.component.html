@@ -1,0 +1,14 @@
+<h3>Componente Cocina</h3>
+<h4>Pendiente de Cocinar</h4>
+<ul>
+  <li *ngFor="let pedido of pedidosIngresados">
+    ({{ pedido.numero }}) - {{ pedido.descripcion }}
+    <button (click)="cocinar(pedido)" [disabled]="pedidoEnCoccion">Cocinar</button>
+  </li>
+</ul>
+
+<h4>Pedidos en Cocción</h4>
+<div *ngIf="pedidoEnCoccion">
+  ({{ pedidoEnCoccion?.numero }}) {{ pedidoEnCoccion?.nombre }} - {{ pedidoEnCoccion?.descripcion }}
+  <button (click)="pedidoTerminado()">Pedido Terminado!</button>
+</div>
